@@ -1,9 +1,9 @@
 mkdir ~/.gems
 
-echo 'export GEM_HOME="$HOME/.gems"' >> .bash_profile
-echo 'export GEM_PATH="$GEM_HOME:/usr/lib/ruby/gems/1.8"' >> .bash_profile
-echo 'export PATH="$HOME/.gems/bin:$PATH"' >> .bash_profile
-echo 'export PATH="$HOME/local/bin:$PATH"' >> .bash_profile
+echo 'export GEM_HOME="$HOME/.gems"' >> ~/.bash_profile
+echo 'export GEM_PATH="$GEM_HOME:/usr/lib/ruby/gems/1.8"' >> ~/.bash_profile
+echo 'export PATH="$HOME/.gems/bin:$PATH"' >> ~/.bash_profile
+echo 'export PATH="$HOME/local/bin:$PATH"' >> ~/.bash_profile
 
 . ~/.bash_profile
 echo $PATH
