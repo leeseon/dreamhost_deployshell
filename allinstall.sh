@@ -40,9 +40,9 @@ cd ..
 export PATH=$HOME/local/bin:$PATH
 
 # get rubygems
-wget http://rubyforge.org/frs/download.php/45905/rubygems-1.3.1.tgz
-tar zxvf rubygems-1.3.1.tgz
-cd rubygems-1.3.1
+wget http://rubyforge.org/frs/download.php/57643/rubygems-1.3.4.tgz
+tar zxvf rubygems-1.3.4.tgz
+cd rubygems-1.3.4
 $HOME/local/bin/ruby setup.rb
 cd ..
 
