@@ -4,14 +4,15 @@ echo 'export GEM_HOME="$HOME/.gems"' >> ~/.bash_profile
 echo 'export GEM_PATH="$GEM_HOME:/usr/lib/ruby/gems/1.8"' >> ~/.bash_profile
 echo 'export PATH="$HOME/.gems/bin:$PATH"' >> ~/.bash_profile
 echo 'export PATH="$HOME/local/bin:$PATH"' >> ~/.bash_profile
+echo 'source ~/.bashrc'
 
 . ~/.bash_profile
 echo $PATH
 
 touch ~/.gemrc
-echo gemhome:$HOME/.gems >> ~/.gemrc
+echo gemhome:/home/$(whoami)/.gems >> ~/.gemrc
 echo gempath: >> ~/.gemrc
-echo "- $HOME/.gems" >> ~/.gemrc
+echo "- /home/$(whoami)/.gems" >> ~/.gemrc
 echo "- /usr/lib/ruby/gems/1.8" >> ~/.gemrc
 
 # setup directories
@@ -28,9 +29,10 @@ make install
 cd ..
 
 # install ruby
-wget ftp://ftp.ruby-lang.org/pub/ruby/1.8/ruby-1.8.7-p160.tar.gz
-tar zxvf ruby-1.8.7-p160.tar.gz
-cd ruby-1.8.7-p160.tar.gz
+RUBYVER=ruby-1.8.7-p174
+wget ftp://ftp.ruby-lang.org/pub/ruby/1.8/$RUBYVER.tar.gz
+tar zxvf $RUBYVER.tar.gz
+cd $RUBYVER
 ./configure --prefix=$HOME/local --with-readline-dir=$HOME/local/
 make
 make install
@@ -40,9 +42,10 @@ cd ..
 export PATH=$HOME/local/bin:$PATH
 
 # get rubygems
-wget http://rubyforge.org/frs/download.php/57643/rubygems-1.3.4.tgz
-tar zxvf rubygems-1.3.4.tgz
-cd rubygems-1.3.4
+GEMSVER=rubygems-1.3.5
+wget http://rubyforge.org/frs/download.php/60718/$GEMSVER.tgz
+tar zxvf $GEMSVER.tgz
+cd $GEMSVER
 $HOME/local/bin/ruby setup.rb
 cd ..
 
@@ -68,7 +71,7 @@ cd ~/packages
 wget http://www.geocities.jp/kosako3/oniguruma/archive/onig-5.9.1.tar.gz
 tar xvzf onig-5.9.1.tar.gz 
 cd onig-5.9.1
-./configure  --prefix=$HOME/local/
+./configure  --prefix=/home/leeseon/local/
 make
 make install
 
