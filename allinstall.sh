@@ -71,7 +71,7 @@ cd ~/packages
 wget http://www.geocities.jp/kosako3/oniguruma/archive/onig-5.9.1.tar.gz
 tar xvzf onig-5.9.1.tar.gz 
 cd onig-5.9.1
-./configure  --prefix=/home/leeseon/local/
+./configure  --prefix=$HOME/local/
 make
 make install
 
